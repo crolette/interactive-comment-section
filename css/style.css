@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700");
+
+/* RESET CSS */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+button,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* END RESET CSS */
+:root {
+  font-size: 16px;
+}
+
+.light {
+  --white: hsl(0, 0%, 100%);
+  --alert: hsl(358, 79%, 66%);
+  --alert-light: hsl(357, 100%, 86%);
+  --primary: hsl(238, 40%, 52%);
+  --primary-light: hsl(239, 57%, 85%);
+  --neutral: hsl(211, 10%, 45%);
+  --neutral-light: hsl(223, 19%, 93%);
+  --neutral-dark: hsl(212, 24%, 26%);
+  --bg-color: hsl(228, 33%, 97%);
+}
+
+body {
+  font-family: "Rubit", sans-serif;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  row-gap: 16px;
+  width: 100vw;
+  /* height: 100vh; */
+  background: var(--bg-color);
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  max-width: 600px;
+}
+
+.comment__card {
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 8px;
+  color: var(--neutral-dark);
+}
+
+.replies {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid black;
+  width: 95%;
+
+  & * + * {
+    margin-top: 1rem;
+  }
+}
+
+.reply {
+  margin-left: 1rem;
+
+  & .reply__author {
+    color: var(--primary);
+    font-weight: 700;
+  }
+}
+
+/* MEDIA QUERY MOBILE */
+@media (max-width: 600px) {
+  :root {
+    font-size: 18px;
+  }
+  .replies {
+    width: 100%;
+
+    & .reply {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.answer {
+  background: red;
+}
+
+/* FOOTER LOGO CROLWEB */
+footer {
+  position: fixed;
+  text-align: center;
+  bottom: 0;
+}
+
+.footer__logo {
+  img {
+    width: 50px;
+  }
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

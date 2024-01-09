@@ -1,26 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Crolweb" />
+    <meta
+      name="description"
+      content="Frontend Mentor | Interactive Comments Section by Crolweb"
+    />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive comments section</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Interactive Comments Section by Crolweb</title>
 
-  <!-- Pull dynamic content from the data.json file -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <style></style>
+  </head>
+  <body class="light">
+    <main class="comments">
+      <div class="comment__card comment" data-commment-id="1">
+        <p>COMMENT</p>
+      </div>
+      <div class="comment__card comment" data-id="1" data-score="5">
+        COMMENT 3
+      </div>
+      <div class="replies">
+        <div class="comment__card reply" data-id="2" data-score="5">
+          <p>
+            <span class="reply__author">@maxblagun </span>Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. Est nemo magnam minima.
+            Cupiditate quis sunt dolore, repudiandae illum, doloribus officiis
+            repellat recusandae mollitia ipsum autem tempore quia perferendis
+            delectus sapiente error nesciunt dolorem in voluptatum perspiciatis!
+            Impedit consectetur et minima temporibus dolor aliquam modi
+            laboriosam nesciunt saepe? Incidunt, facere. A alias perspiciatis
+            hic accusantium. Aut esse minima a, alias veritatis eaque dolorum,
+            placeat quidem assumenda voluptatem sint ad ullam vitae laborum
+            cupiditate dignissimos in. Dolorum itaque illum soluta, in dolores
+            neque, numquam sit vitae architecto quod laudantium repellat
+            perferendis ad debitis impedit dolor cupiditate corporis. Ducimus
+            sint cumque sunt expedita? Eius repudiandae ex architecto rerum?
+            Atque illo veritatis eligendi, ratione quos excepturi tempora
+            doloremque delectus, esse sunt quis sed quo? Quae reiciendis alias
+            hic fuga asperiores, sunt, deleniti excepturi debitis vitae quasi,
+            aliquid iure dicta error. Ipsam necessitatibus animi suscipit
+            perspiciatis nobis nam, pariatur doloremque itaque natus explicabo
+            omnis enim amet sint earum debitis, unde quas cupiditate fuga maxime
+            cum quod iste? Eveniet, dolores. Maxime dignissimos facilis vel
+            dolor laborum? Tempora eius beatae impedit optio veniam quod,
+            recusandae mollitia ducimus fugiat adipisci, corrupti nulla
+            molestias labore sequi sed? Deserunt tenetur quam omnis natus optio
+            praesentium soluta asperiores consequatur, reiciendis id.
+          </p>
+        </div>
+        <div class="comment__card reply" data-id="3" data-score="5">
+          <p>ANSWER</p>
+        </div>
+        <div class="comment__card reply" data-id="4" data-score="5">
+          <p>ANSWER</p>
+        </div>
+      </div>
+      <div class="comment__card comment" data-id="5" data-score="5">
+        COMMENT 3
+      </div>
+      <div class="answer">REPLY</div>
+
+      <!-- <main class="comments">
+      <div class="comment" data-id="1">
+        <div class="comment__card"></div>
+      </div>
+      <div class="comment__card" data-id="2">
+        <div class="comment"></div>
+        <div class="responses">
+          <div class="responses__card" data-reply="1"></div>
+          <div class="responses__Card" data-reply="2"></div>
+        </div>
+      </div>
+      <div class="answer"></div> -->
+    </main>
+
+    <footer>
+      <a
+        class="footer__logo"
+        href="http://github.com/crolette"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><img src="./images/crolweb-logo.png" alt="Logo Crolweb"
+      /></a>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="http://github.com/crolette">Crolweb</a>.
+      </div>
+    </footer>
+  </body>
 </html>
