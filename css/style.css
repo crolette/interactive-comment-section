@@ -179,6 +179,79 @@ body {
   background: var(--white);
   border-radius: 8px;
   color: var(--neutral-dark);
+  display: grid;
+  grid-template-columns: 40px 2fr 1fr;
+  gap: 24px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "votes user reaction"
+    "votes comment comment";
+
+  & .card__votes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    grid-area: votes;
+    background-color: var(--bg-color);
+
+    & > svg {
+      color: var(--primary-light);
+
+      &:hover {
+        color: var(--primary);
+      }
+    }
+
+    & > .votes__score {
+      color: var(--primary);
+      font-weight: 700;
+    }
+  }
+
+  & .card__user {
+    grid-area: user;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    font-size: 0.8rem;
+
+    & > img {
+      aspect-ratio: 1;
+      width: 32px;
+      height: auto;
+    }
+
+    & > .user__name {
+      font-weight: 700;
+
+      & .user__you {
+        background-color: var(--primary);
+        padding: 2px;
+        border-radius: 2px;
+        color: var(--white);
+      }
+    }
+
+    & > .user__date {
+      color: var(--neutral);
+    }
+  }
+
+  & .card__comment {
+    grid-area: comment;
+    background-color: lightgoldenrodyellow;
+  }
+
+  & .card__reaction {
+    grid-area: reaction;
+    background-color: greenyellow;
+
+    & > .reaction__reply {
+      display: flex;
+      align-items: center;
+    }
+  }
 }
 
 .replies {
@@ -206,6 +279,26 @@ body {
 @media (max-width: 600px) {
   :root {
     font-size: 18px;
+  }
+
+  .comment__card {
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 8px;
+    color: var(--neutral-dark);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "user user"
+      "comment comment"
+      "votes reaction";
+
+    & .card__votes {
+      flex-direction: row;
+      background-color: lightskyblue;
+    }
   }
   .replies {
     width: 100%;
