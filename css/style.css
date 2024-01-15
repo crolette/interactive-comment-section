@@ -175,13 +175,15 @@ body {
 }
 
 .comment__card {
-  padding: 2rem;
+  padding: 24px;
   background: var(--white);
+  font-size: 0.78rem;
+  line-height: 1rem;
   border-radius: 8px;
   color: var(--neutral-dark);
   display: grid;
   grid-template-columns: 40px 2fr 1fr;
-  gap: 24px;
+  gap: 20px;
   grid-template-rows: auto;
   grid-template-areas:
     "votes user reaction"
@@ -190,19 +192,24 @@ body {
   & .card__votes {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    align-items: center;
     grid-area: votes;
     background-color: var(--bg-color);
+    border-radius: 8px;
+    height: 100px;
 
-    & > svg {
+    svg {
       color: var(--primary-light);
+      height: 15px;
+      cursor: pointer;
 
       &:hover {
         color: var(--primary);
       }
     }
 
-    & > .votes__score {
+    .votes__score {
       color: var(--primary);
       font-weight: 700;
     }
@@ -227,7 +234,8 @@ body {
 
       & .user__you {
         background-color: var(--primary);
-        padding: 2px;
+        padding: 1px 4px;
+        font-weight: 400;
         border-radius: 2px;
         color: var(--white);
       }
@@ -240,12 +248,41 @@ body {
 
   & .card__comment {
     grid-area: comment;
-    background-color: lightgoldenrodyellow;
   }
 
   & .card__reaction {
     grid-area: reaction;
-    background-color: greenyellow;
+    /* background-color: greenyellow; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    svg {
+      width: 11px;
+    }
+
+    .reaction__btn {
+      display: flex;
+      align-items: center;
+      padding-left: 16px;
+      gap: 4px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      color: var(--primary);
+
+      &.reaction__btn--delete {
+        color: var(--alert);
+
+        &:hover {
+          color: var(--alert-light);
+        }
+      }
+
+      &.reaction__btn--disable {
+        display: none;
+      }
+    }
 
     & > .reaction__reply {
       display: flex;
@@ -261,7 +298,7 @@ body {
   border-left: 1px solid black;
   width: 95%;
 
-  & * + * {
+  & > div:not(:first-child) {
     margin-top: 1rem;
   }
 }
@@ -269,20 +306,67 @@ body {
 .reply {
   margin-left: 1rem;
 
+  &.answer:is(.comment__card) {
+    background-color: lightcyan;
+    grid-template-areas: none;
+  }
   & .reply__author {
     color: var(--primary);
     font-weight: 700;
   }
 }
 
+.answer {
+  grid-template-columns: 40px 7fr 1fr;
+  grid-template-areas: none;
+
+  img {
+    width: 40px;
+  }
+
+  textarea {
+    background-color: inherit;
+    border: 1px solid var(--primary-light);
+    border-radius: 4px;
+    width: 100%;
+    resize: none;
+    font-family: inherit;
+    padding: 10px 12px;
+
+    &:user-valid,
+    &:focus-within {
+      outline: none;
+      box-sizing: border-box;
+      border: 2px solid var(--primary);
+    }
+  }
+
+  input[type="submit"] {
+    background-color: var(--primary);
+    color: var(--white);
+    font-family: inherit;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+
+    &:hover {
+      background-color: var(--primary-light);
+    }
+  }
+}
+
 /* MEDIA QUERY MOBILE */
 @media (max-width: 600px) {
   :root {
-    font-size: 18px;
+  }
+
+  .comments {
+    margin: 1rem;
   }
 
   .comment__card {
-    padding: 2rem;
+    padding: 16px;
     background: var(--white);
     border-radius: 8px;
     color: var(--neutral-dark);
@@ -297,7 +381,9 @@ body {
 
     & .card__votes {
       flex-direction: row;
-      background-color: lightskyblue;
+      height: auto;
+      width: 100px;
+      padding: 12px 16px;
     }
   }
   .replies {
@@ -307,10 +393,11 @@ body {
       margin-left: 1rem;
     }
   }
-}
 
-.answer {
-  background: red;
+  .answer {
+    grid-template-columns: 40px 7fr 1fr;
+    grid-template-areas: none;
+  }
 }
 
 /* FOOTER LOGO CROLWEB */

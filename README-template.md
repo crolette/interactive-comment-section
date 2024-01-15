@@ -88,3 +88,8 @@ Use this section to outline areas that you want to continue focusing on in futur
 - [Crolweb - Website](https://www.crolweb.be)
 - [Crolweb - Github](https://github.com/crolette)
 - [@crolette - Frontend Mentor](https://www.frontendmentor.io/profile/crolette)
+
+## To Improve
+
+### Styles
+- SVG: avoid reusing always the complete svg
