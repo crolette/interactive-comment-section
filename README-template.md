@@ -46,6 +46,7 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
+- SVG: use of sprite with symbol
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
 - [Styled Components](https://styled-components.com/) - For styles
@@ -92,4 +93,5 @@ Use this section to outline areas that you want to continue focusing on in futur
 ## To Improve
 
 ### Styles
+
 - SVG: avoid reusing always the complete svg

@@ -137,6 +137,10 @@ table {
   border-spacing: 0;
 }
 
+svg {
+  aspect-ratio: 1;
+}
+
 /* END RESET CSS */
 :root {
   font-size: 16px;
@@ -258,7 +262,8 @@ body {
     justify-content: flex-end;
 
     svg {
-      width: 11px;
+      aspect-ratio: 1;
+      height: 11px;
     }
 
     .reaction__btn {
