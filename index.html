@@ -80,7 +80,22 @@
             </div>
           </div>
       </div>
-
+      <div class="comment__card comment answer">
+        <div class="answer__picture">
+          <img src="./images/avatars/image-maxblagun.png" alt="Max Blagun picture">
+        </div>
+        <div class="answer__textarea">
+          <form action="" id="form-comment-reply">
+            <textarea name="comment-reply" id="comment-reply" rows="3" placeholder="Add a reply..."></textarea>
+          </form>
+        </div>
+        
+        
+        <div class="answer__button">
+          <input type="submit" value="REPLY" form="form-comment-reply">
+          
+        </div>
+      </div>
       <div class="comment__card comment" data-commment-id="2">
           <div class="card__votes">
             <svg>
@@ -199,6 +214,8 @@
             <textarea name="comment-reply" id="comment-reply" rows="3" placeholder="Add a reply..."></textarea>
           </form>
         </div>
+        
+        
         <div class="answer__button">
           <input type="submit" value="REPLY" form="form-comment-reply">
           
@@ -216,18 +233,18 @@
               <use href="./images/icons.svg#minus"></use>
             </svg>
           </div>
-        <div class="card__user">
-          <img src="./images/avatars/image-amyrobson.webp" alt="">
-          <p class="user__name">
-            amyrozefebson <span class="user__you">
-              you
-            </span>
-          </p>
-          <p class="user__date">
-            1 month ago
-          </p>
-        </div>
-        <div class="card__comment">
+          <div class="card__user">
+            <img src="./images/avatars/image-amyrobson.webp" alt="">
+            <p class="user__name">
+              amyrozefebson <span class="user__you">
+                you
+              </span>
+            </p>
+            <p class="user__date">
+              1 month ago
+            </p>
+          </div>
+          <div class="card__comment">
           <p>
             Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
             deleniti distinctio fugiat eum rem adipisci ipsam odit. Optio cumque
@@ -236,7 +253,7 @@
             corporis optio ipsa necessitatibus dignissimos fugiat, asperiores est
             repellendus, maiores soluta qui.
           </p>
-        </div>
+          </div>
            <div class="card__reaction">
             <div class="reaction__btn reaction__btn--reply">
               <svg>
@@ -328,6 +345,20 @@
           
         </div>
       </div>
+
+      <!-- MODALE DELETE COMMENT -->
+      <div class="modale__container modale__container--disable ">
+        <div class="modale__content"> 
+          <h2>Delete Comment</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem suscipit saepe quam voluptas rerum necessitatibus numquam, distinctio reiciendis fugiat facilis.</p>
+          <div class="modale__buttons">
+            <button class="">NO, CANCEL</button>
+            <button class="modale__buttons--delete">YES, DELETE</button>
+          </div>
+
+        </div>
+      </div>
+
     </main>
 
     <footer>
