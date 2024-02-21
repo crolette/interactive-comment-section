@@ -48,6 +48,7 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - SVG: use of sprite with symbol
+- Javascript Modules
 
 ### What I learned
 
