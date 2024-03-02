@@ -6,13 +6,13 @@ const commentCard = {
     return `<div class="comment__card comment" data-commment-id="${comment.id}">
           <div class="card__votes">
             <svg>
-              <use href="./images/icons.svg#plus"></use>
+              <use href="./images/icons.svg#plus" data-votes-plus="${comment.id}"></use>
             </svg>
             <p class="votes__score">
               ${comment.score}
             </p>
             <svg>
-              <use href="./images/icons.svg#minus"></use>
+              <use href="./images/icons.svg#minus" data-votes-minus="${comment.id}"></use>
             </svg>
           </div>
         <div class="card__user">
@@ -69,7 +69,7 @@ const commentCard = {
           <input type="submit" value="SEND" form="form-comment">
         </div>
       `;
-  }
+  },
 };
 
 export { commentCard };

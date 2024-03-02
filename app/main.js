@@ -1,6 +1,10 @@
 // * main.js = work on DOM
 
-import { fetchComments, fetchCurrentUser } from "./fetch.js";
+import {
+  addNewCommentToFile,
+  fetchComments,
+  fetchCurrentUser,
+} from "./fetch.js";
 import { commentCard } from "./dom.js";
 let comments = "";
 let comment = "";
@@ -21,6 +25,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
   body[0].prepend(mainElement);
 
   addReplySection();
+  addEventListenerOnMinusVotes();
 });
 
 async function addReplySection() {
@@ -40,7 +45,6 @@ function addEventListenerReply() {
     const answer = e.target[0].value;
     const answerTime = e.timeStamp;
     let formDiv = document.getElementById("form-answer");
-    console.log(formDiv);
     const newComment = await createNewObjectComment(answer, answerTime);
     addAnswer(newComment, formDiv);
   });
@@ -60,7 +64,7 @@ async function createNewObjectComment(content, time) {
     createdAt: time,
     score: 0,
     user,
-    replies: []
+    replies: [],
   };
 
   return newComment;
@@ -71,6 +75,7 @@ async function addAnswer(newComment, formDiv) {
   answerDiv.innerHTML = commentCard.htmlCommentCard(newComment);
 
   formDiv.before(answerDiv);
+  addNewCommentToFile(newComment);
 }
 
 // look after the highest id in the comments
@@ -86,6 +91,21 @@ function getHighestId(comments) {
   });
 
   return Math.max(...idsComments);
+}
+
+function addEventListenerOnMinusVotes() {
+  let votesMinus = document.querySelectorAll(
+    '[href="./images/icons.svg#minus"]'
+  );
+
+  votesMinus.forEach((elem) => {
+    elem.addEventListener("click", (e) => {
+      let id = e.target.dataset.votesMinus;
+      console.log(comments[id]);
+      //.score--;
+    });
+  });
+  console.log(votesMinus);
 }
 
 // export { comment };
