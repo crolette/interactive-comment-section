@@ -163,6 +163,7 @@ body {
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   display: flex;
+  flex-direction: column;
   align-items: center;
   align-content: center;
   justify-content: center;

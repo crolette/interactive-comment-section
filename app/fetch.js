@@ -2,9 +2,25 @@
 
 async function fetchComments() {
   const reponse = await fetch("./data.json");
-  const comments = await reponse.json();
-  console.log("affiche film");
+  const data = await reponse.json();
+  const comments = data.comments;
   return comments;
 }
 
-export { fetchComments };
+// retrieve currentUser from data JSON
+async function fetchCurrentUser() {
+  const reponse = await fetch("./data.json");
+  const data = await reponse.json();
+  const currentUser = data.currentUser;
+  return currentUser;
+}
+
+async function addNewCommentToFile(newComment) {
+  const reponse = await fetch("./data.json");
+  const data = await reponse.json();
+  console.log(data.comments);
+}
+
+addNewCommentToFile();
+
+export { fetchComments, fetchCurrentUser };

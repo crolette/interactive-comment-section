@@ -53,6 +53,23 @@ const commentCard = {
           </div>
       </div>`;
   },
+  htmlReplySection(currentUser) {
+    return `
+    <!-- ADD A NEW COMMENT -->
+        <div class="answer__picture">
+          <img src="${currentUser.image.webp}" alt="${currentUser.username} picture">
+        </div>
+        <div class="answer__textarea">
+          <form action="" id="form-comment">
+
+            <textarea name="comment-answer" id="comment-answer" rows="3" placeholder="Add a comment..."></textarea>
+          </form>
+        </div>
+        <div class="answer__button">
+          <input type="submit" value="SEND" form="form-comment">
+        </div>
+      `;
+  }
 };
 
 export { commentCard };

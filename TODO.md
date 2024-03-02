@@ -3,6 +3,8 @@
 - Adapter au mobile
 
 - Récupérer les commentaires du JSON
+  // TODO : Time il faut encore le modifier/le parser
+  // TODO - Créer une fonction pour aller chercher le currentUser une fois (update si changement de user)
 
 ## Interactions:
 
