@@ -386,6 +386,11 @@ body {
     color: var(--primary);
     font-weight: 700;
   }
+
+  & .reply_user {
+    color: var(--primary);
+    font-weight: 700;
+  }
 }
 
 textarea {

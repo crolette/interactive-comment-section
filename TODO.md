@@ -1,3 +1,7 @@
+## Layout
+
+- Adapter au mobile
+
 - Récupérer les commentaires du JSON
 
 ## Interactions:

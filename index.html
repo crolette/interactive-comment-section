@@ -24,7 +24,9 @@
 
   </head>
   <body class="light">
+    <!-- MAIN COMMENTS -->
     <main class="comments">
+      <!-- CARD COMMENT -->
       <div class="comment__card comment" data-commment-id="1">
           <div class="card__votes">
             <svg>
@@ -79,7 +81,9 @@
             </div>
           </div>
       </div>
-      <div class="comment__card comment" data-commment-id="1">
+      
+      <!-- EDIT COMMENT CARD -->
+      <div class="comment__card comment" data-commment-id="2">
           <div class="card__votes">
             <svg>
               <use href="./images/icons.svg#plus"></use>
@@ -113,22 +117,21 @@
               <input type="submit" value="REPLY" form="form-comment-reply">
             </div>
           </div>
-            
         </div>
           <div class="card__reaction">
-            <div class="reaction__btn reaction__btn--reply">
+            <div class="reaction__btn reaction__btn--reply  reaction__btn--disable">
               <svg>
               <use href="./images/icons.svg#reply">
               </svg>
               <p>Reply</p>
             </div>
-            <div class="reaction__btn reaction__btn--delete reaction__btn--disable">
+            <div class="reaction__btn reaction__btn--delete">
                 <svg>
                 <use href="./images/icons.svg#delete">
                 </svg>
               <p>Delete</p>
             </div>
-            <div class="reaction__btn reaction__btn--edit reaction__btn--disable ">
+            <div class="reaction__btn reaction__btn--edit ">
                 <svg>
                 <use href="./images/icons.svg#edit">
                 </svg>
@@ -136,6 +139,8 @@
             </div>
           </div>
       </div>
+      
+      <!-- ADD A REPLY CARD -->
       <div class="comment__card comment answer">
         <div class="answer__picture">
           <img src="./images/avatars/image-maxblagun.png" alt="Max Blagun picture">
@@ -149,7 +154,9 @@
           <input type="submit" value="REPLY" form="form-comment-reply">
         </div>
       </div>
-      <div class="comment__card comment" data-commment-id="2">
+
+      <!-- COMMENT CARD -->
+      <div class="comment__card comment" data-commment-id="3">
           <div class="card__votes">
             <svg>
               <use href="./images/icons.svg#plus"></use>
@@ -162,9 +169,9 @@
             </svg>
           </div>
         <div class="card__user">
-          <img src="./images/avatars/image-amyrobson.webp" alt="">
+          <img src="./images/avatars/image-juliusomo.webp" alt="">
           <p class="user__name">
-            amyrozefebson <span class="user__you">
+            juliusomo <span class="user__you">
               you
             </span>
           </p>
@@ -203,62 +210,11 @@
             </div>
           </div>
       </div>
-      <div class="comment__card comment" data-commment-id="2">
-          <div class="card__votes">
-            <svg>
-              <use href="./images/icons.svg#plus"></use>
-            </svg>
-            <p class="votes__score">
-              5
-            </p>
-            <svg>
-              <use href="./images/icons.svg#minus"></use>
-            </svg>
-          </div>
-        <div class="card__user">
-          <img src="./images/avatars/image-amyrobson.webp" alt="">
-          <p class="user__name">
-            amyrozefebson <span class="user__you">
-              you
-            </span>
-          </p>
-          <p class="user__date">
-            1 month ago
-          </p>
-        </div>
-        <div class="card__comment">
-          <p>
-            Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
-            deleniti distinctio fugiat eum rem adipisci ipsam odit. Optio cumque
-            voluptatibus fugiat architecto maxime. Enim id et deserunt voluptas
-            illum autem impedit doloribus! Quam facere incidunt excepturi corrupti
-            corporis optio ipsa necessitatibus dignissimos fugiat, asperiores est
-            repellendus, maiores soluta qui.
-          </p>
-        </div>
-          <div class="card__reaction">
-            <div class="reaction__btn reaction__btn--reply">
-              <svg>
-              <use href="./images/icons.svg#reply">
-              </svg>
-              <p>Reply</p>
-            </div>
-            <div class="reaction__btn reaction__btn--delete reaction__btn--disable">
-                <svg>
-                <use href="./images/icons.svg#delete">
-                </svg>
-              <p>Delete</p>
-            </div>
-            <div class="reaction__btn reaction__btn--edit reaction__btn--disable">
-                <svg>
-                <use href="./images/icons.svg#edit">
-                </svg>
-              <p>Edit</p>
-            </div>
-          </div>
-      </div>
+
+      <!-- REPLIES -->
       <div class="replies">
-        <div class="comment__card reply" data-commment-id="3">
+        <!-- REPLY TO COMMENT CARD -->
+        <div class="comment__card reply" data-commment-id="3" data-reply-id="1">
           <div class="card__votes">
             <svg>
               <use href="./images/icons.svg#plus"></use>
@@ -271,9 +227,9 @@
             </svg>
           </div>
           <div class="card__user">
-            <img src="./images/avatars/image-amyrobson.webp" alt="">
+            <img src="./images/avatars/image-ramsesmiron.webp" alt="">
             <p class="user__name">
-              amyrozefebson <span class="user__you">
+              ramsesmiron <span class="user__you">
                 you
               </span>
             </p>
@@ -283,7 +239,7 @@
           </div>
           <div class="card__comment">
             <p>
-              Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
+              <span class="reply_user">@juliusomo </span>Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
               deleniti distinctio fugiat eum rem adipisci ipsam odit. Optio cumque
               voluptatibus fugiat architecto maxime. Enim id et deserunt voluptas
               illum autem impedit doloribus! Quam facere incidunt excepturi corrupti
@@ -312,23 +268,9 @@
             </div>
           </div>
         </div>
-      <div class="comment__card reply answer">
-        <div class="answer__picture">
-          <img src="./images/avatars/image-maxblagun.png" alt="Max Blagun picture">
-        </div>
-        <div class="answer__textarea">
-          <form action="" id="form-comment-reply">
-            <textarea name="comment-reply" id="comment-reply" rows="3" placeholder="Add a reply..."></textarea>
-          </form>
-        </div>
-        
-        
-        <div class="answer__button">
-          <input type="submit" value="REPLY" form="form-comment-reply">
-          
-        </div>
-      </div>
-        <div class="comment__card reply" data-commment-id="4">
+
+       <!-- REPLY TO COMMENT CARD -->
+        <div class="comment__card reply" data-commment-id="3" data-reply-id="2">
           <div class="card__votes">
             <svg>
               <use href="./images/icons.svg#plus"></use>
@@ -353,7 +295,7 @@
           </div>
           <div class="card__comment">
           <p>
-            Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
+            <span class="reply_user">@ramesmiron </span>Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
             deleniti distinctio fugiat eum rem adipisci ipsam odit. Optio cumque
             voluptatibus fugiat architecto maxime. Enim id et deserunt voluptas
             illum autem impedit doloribus! Quam facere incidunt excepturi corrupti
@@ -382,61 +324,24 @@
             </div>
           </div>
         </div>
+         <!-- ADD A REPLY TO COMMENT CARD -->
+      <div class="comment__card reply answer">
+        <div class="answer__picture">
+          <img src="./images/avatars/image-maxblagun.png" alt="Max Blagun picture">
+        </div>
+        <div class="answer__textarea">
+          <form action="" id="form-comment-reply">
+            <textarea name="comment-reply" id="comment-reply" rows="3" placeholder="Add a reply..."></textarea>
+          </form>
+        </div>
+        <div class="answer__button">
+          <input type="submit" value="REPLY" form="form-comment-reply">
+        </div>
       </div>
-      <div class="comment__card comment" data-commment-id="5">
-          <div class="card__votes">
-            <svg>
-              <use href="./images/icons.svg#plus"></use>
-            </svg>
-            <p class="votes__score">
-              5
-            </p>
-            <svg>
-              <use href="./images/icons.svg#minus"></use>
-            </svg>
-          </div>
-        <div class="card__user">
-          <img src="./images/avatars/image-amyrobson.webp" alt="">
-          <p class="user__name">
-            amyrozefebson <span class="user__you">
-              you
-            </span>
-          </p>
-          <p class="user__date">
-            1 month ago
-          </p>
-        </div>
-        <div class="card__comment">
-          <p>
-            Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
-            deleniti distinctio fugiat eum rem adipisci ipsam odit. Optio cumque
-            voluptatibus fugiat architecto maxime. Enim id et deserunt voluptas
-            illum autem impedit doloribus! Quam facere incidunt excepturi corrupti
-            corporis optio ipsa necessitatibus dignissimos fugiat, asperiores est
-            repellendus, maiores soluta qui.
-          </p>
-        </div>
-          <div class="card__reaction">
-            <div class="reaction__btn reaction__btn--reply">
-              <svg>
-              <use href="./images/icons.svg#reply">
-              </svg>
-              <p>Reply</p>
-            </div>
-            <div class="reaction__btn reaction__btn--delete reaction__btn--disable">
-                <svg>
-                <use href="./images/icons.svg#delete">
-                </svg>
-              <p>Delete</p>
-            </div>
-            <div class="reaction__btn reaction__btn--edit reaction__btn--disable ">
-                <svg>
-                <use href="./images/icons.svg#edit">
-                </svg>
-              <p>Edit</p>
-            </div>
-          </div>
-        </div>
+      </div>
+      
+
+        <!-- ADD A NEW COMMENT -->
       <div class="comment__card answer ">
         <div class="answer__picture">
           <img src="./images/avatars/image-maxblagun.png" alt="Max Blagun picture">
@@ -449,18 +354,17 @@
         </div>
         <div class="answer__button">
           <input type="submit" value="SEND" form="form-comment">
-          
         </div>
       </div>
 
       <!-- MODALE DELETE COMMENT -->
-      <div class="modale__container modale__container--disable ">
+      <div class="modale__container modale__container--disable  ">
         <div class="modale__content"> 
           <h2>Delete Comment</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem suscipit saepe quam voluptas rerum necessitatibus numquam, distinctio reiciendis fugiat facilis.</p>
           <div class="modale__buttons">
-            <button class="">NO, CANCEL</button>
-            <button class="modale__buttons--delete">YES, DELETE</button>
+            <button class="" id="noDelete">NO, CANCEL</button>
+            <button class="modale__buttons--delete" id="delete">YES, DELETE</button>
           </div>
 
         </div>
