@@ -137,6 +137,10 @@ table {
   border-spacing: 0;
 }
 
+svg {
+  aspect-ratio: 1;
+}
+
 /* END RESET CSS */
 :root {
   font-size: 16px;
@@ -150,14 +154,16 @@ table {
   --primary-light: hsl(239, 57%, 85%);
   --neutral: hsl(211, 10%, 45%);
   --neutral-light: hsl(223, 19%, 93%);
-  --neutral-dark: hsl(212, 24%, 26%);
+  --neutral-dark: 212, 24%, 26%;
   --bg-color: hsl(228, 33%, 97%);
 }
 
 body {
-  font-family: "Rubit", sans-serif;
+  position: relative;
+  font-family: "Rubik", sans-serif;
   font-weight: 400;
   display: flex;
+  flex-direction: column;
   align-items: center;
   align-content: center;
   justify-content: center;
@@ -165,6 +171,67 @@ body {
   width: 100vw;
   /* height: 100vh; */
   background: var(--bg-color);
+}
+
+.modale__container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(var(--neutral-dark), 0.5);
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .modale__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    padding: 32px;
+    border-radius: 8px;
+    background-color: var(--white);
+
+    width: 400px;
+    line-height: 1.3rem;
+    color: hsl(var(--neutral-dark));
+
+    & h2 {
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .modale__buttons {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        cursor: pointer;
+        padding: 1rem;
+        color: var(--white);
+        background-color: var(--neutral);
+        border-radius: 8px;
+        &:hover {
+          color: hsl(var(--neutral-dark));
+          background-color: var(--neutral-light);
+        }
+      }
+
+      .modale__buttons--delete {
+        background-color: var(--alert);
+
+        &:hover {
+          background-color: var(--alert-light);
+        }
+      }
+    }
+  }
+
+  &.modale__container--disable {
+    display: none;
+  }
 }
 
 .comments {
@@ -175,10 +242,127 @@ body {
 }
 
 .comment__card {
-  padding: 2rem;
+  padding: 24px;
   background: var(--white);
+  font-size: 0.78rem;
+  line-height: 1rem;
   border-radius: 8px;
-  color: var(--neutral-dark);
+  color: hsl(var(--neutral-dark));
+  display: grid;
+  grid-template-columns: 40px 2fr 1fr;
+  gap: 20px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "votes user reaction"
+    "votes comment comment";
+
+  & .card__votes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    grid-area: votes;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    height: 100px;
+
+    svg {
+      color: var(--primary-light);
+      height: 15px;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--primary);
+      }
+    }
+
+    .votes__score {
+      color: var(--primary);
+      font-weight: 700;
+    }
+  }
+
+  & .card__user {
+    grid-area: user;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    font-size: 0.8rem;
+
+    & > img {
+      aspect-ratio: 1;
+      width: 32px;
+      height: auto;
+    }
+
+    & > .user__name {
+      font-weight: 700;
+
+      & .user__you {
+        background-color: var(--primary);
+        padding: 1px 4px;
+        font-weight: 400;
+        border-radius: 2px;
+        color: var(--white);
+      }
+    }
+
+    & > .user__date {
+      color: var(--neutral);
+    }
+  }
+
+  & .card__comment {
+    grid-area: comment;
+
+    & .comment__edit {
+      display: grid;
+      grid-template-columns: 7fr 1fr;
+      gap: 20px;
+    }
+  }
+
+  & .card__reaction {
+    grid-area: reaction;
+    /* background-color: greenyellow; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    svg {
+      aspect-ratio: 1;
+      height: 11px;
+    }
+
+    .reaction__btn {
+      display: flex;
+      align-items: center;
+      padding-left: 16px;
+      gap: 4px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      color: var(--primary);
+
+      &.reaction__btn--delete {
+        color: var(--alert);
+
+        &:hover {
+          color: var(--alert-light);
+        }
+      }
+
+      &.reaction__btn--disable {
+        display: none;
+      }
+    }
+
+    & > .reaction__reply {
+      display: flex;
+      align-items: center;
+    }
+  }
 }
 
 .replies {
@@ -188,7 +372,7 @@ body {
   border-left: 1px solid black;
   width: 95%;
 
-  & * + * {
+  & > div:not(:first-child) {
     margin-top: 1rem;
   }
 }
@@ -196,16 +380,92 @@ body {
 .reply {
   margin-left: 1rem;
 
+  &.answer:is(.comment__card) {
+    grid-template-areas: none;
+  }
   & .reply__author {
+    color: var(--primary);
+    font-weight: 700;
+  }
+
+  & .reply_user {
     color: var(--primary);
     font-weight: 700;
   }
 }
 
+textarea {
+  background-color: inherit;
+  border: 1px solid var(--primary-light);
+  border-radius: 4px;
+  width: 100%;
+  resize: none;
+  font-family: inherit;
+  padding: 10px 12px;
+
+  &:user-valid,
+  &:focus-within {
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid var(--primary);
+  }
+}
+
+input[type="submit"] {
+  background-color: var(--primary);
+  color: var(--white);
+  font-family: inherit;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    background-color: var(--primary-light);
+  }
+}
+
+.answer {
+  grid-template-columns: 40px 7fr 1fr;
+  grid-template-areas: none;
+
+  img {
+    width: 40px;
+  }
+}
+
 /* MEDIA QUERY MOBILE */
 @media (max-width: 600px) {
-  :root {
-    font-size: 18px;
+  .modale__container {
+    & .modale__content {
+      width: 345px;
+    }
+  }
+
+  .comments {
+    margin: 1rem;
+  }
+
+  .comment__card {
+    padding: 16px;
+    background: var(--white);
+    border-radius: 8px;
+    color: hsl(var(--neutral-dark));
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "user user"
+      "comment comment"
+      "votes reaction";
+
+    & .card__votes {
+      flex-direction: row;
+      height: auto;
+      width: 100px;
+      padding: 12px 16px;
+    }
   }
   .replies {
     width: 100%;
@@ -214,10 +474,15 @@ body {
       margin-left: 1rem;
     }
   }
-}
 
-.answer {
-  background: red;
+  .answer {
+    grid-template-columns: 32px 8fr 1fr;
+    grid-template-areas: none;
+
+    img {
+      width: 32px;
+    }
+  }
 }
 
 /* FOOTER LOGO CROLWEB */

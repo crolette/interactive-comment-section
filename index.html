@@ -22,70 +22,356 @@
 
     <title>Frontend Mentor | Interactive Comments Section by Crolweb</title>
 
-    <style></style>
   </head>
   <body class="light">
+    <!-- MAIN COMMENTS -->
     <main class="comments">
+      <!-- CARD COMMENT -->
       <div class="comment__card comment" data-commment-id="1">
-        <p>COMMENT</p>
-      </div>
-      <div class="comment__card comment" data-id="1" data-score="5">
-        COMMENT 3
-      </div>
-      <div class="replies">
-        <div class="comment__card reply" data-id="2" data-score="5">
-          <p>
-            <span class="reply__author">@maxblagun </span>Lorem ipsum dolor sit
-            amet consectetur adipisicing elit. Est nemo magnam minima.
-            Cupiditate quis sunt dolore, repudiandae illum, doloribus officiis
-            repellat recusandae mollitia ipsum autem tempore quia perferendis
-            delectus sapiente error nesciunt dolorem in voluptatum perspiciatis!
-            Impedit consectetur et minima temporibus dolor aliquam modi
-            laboriosam nesciunt saepe? Incidunt, facere. A alias perspiciatis
-            hic accusantium. Aut esse minima a, alias veritatis eaque dolorum,
-            placeat quidem assumenda voluptatem sint ad ullam vitae laborum
-            cupiditate dignissimos in. Dolorum itaque illum soluta, in dolores
-            neque, numquam sit vitae architecto quod laudantium repellat
-            perferendis ad debitis impedit dolor cupiditate corporis. Ducimus
-            sint cumque sunt expedita? Eius repudiandae ex architecto rerum?
-            Atque illo veritatis eligendi, ratione quos excepturi tempora
-            doloremque delectus, esse sunt quis sed quo? Quae reiciendis alias
-            hic fuga asperiores, sunt, deleniti excepturi debitis vitae quasi,
-            aliquid iure dicta error. Ipsam necessitatibus animi suscipit
-            perspiciatis nobis nam, pariatur doloremque itaque natus explicabo
-            omnis enim amet sint earum debitis, unde quas cupiditate fuga maxime
-            cum quod iste? Eveniet, dolores. Maxime dignissimos facilis vel
-            dolor laborum? Tempora eius beatae impedit optio veniam quod,
-            recusandae mollitia ducimus fugiat adipisci, corrupti nulla
-            molestias labore sequi sed? Deserunt tenetur quam omnis natus optio
-            praesentium soluta asperiores consequatur, reiciendis id.
+          <div class="card__votes">
+            <svg>
+              <use href="./images/icons.svg#plus"></use>
+            </svg>
+            <p class="votes__score">
+              5
+            </p>
+            <svg>
+              <use href="./images/icons.svg#minus"></use>
+            </svg>
+          </div>
+        <div class="card__user">
+          <img src="./images/avatars/image-amyrobson.webp" alt="">
+          <p class="user__name">
+            amyrozefebson <span class="user__you">
+              you
+            </span>
+          </p>
+          <p class="user__date">
+            1 month ago
           </p>
         </div>
-        <div class="comment__card reply" data-id="3" data-score="5">
-          <p>ANSWER</p>
+        <div class="card__comment">
+          <p>
+            Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
+            deleniti distinctio fugiat eum rem adipisci ipsam odit. Optio cumque
+            voluptatibus fugiat architecto maxime. Enim id et deserunt voluptas
+            illum autem impedit doloribus! Quam facere incidunt excepturi corrupti
+            corporis optio ipsa necessitatibus dignissimos fugiat, asperiores est
+            repellendus, maiores soluta qui.
+          </p>
         </div>
-        <div class="comment__card reply" data-id="4" data-score="5">
-          <p>ANSWER</p>
+          <div class="card__reaction">
+            <div class="reaction__btn reaction__btn--reply">
+              <svg>
+              <use href="./images/icons.svg#reply">
+              </svg>
+              <p>Reply</p>
+            </div>
+            <div class="reaction__btn reaction__btn--delete reaction__btn--disable">
+                <svg>
+                <use href="./images/icons.svg#delete">
+                </svg>
+              <p>Delete</p>
+            </div>
+            <div class="reaction__btn reaction__btn--edit reaction__btn--disable ">
+                <svg>
+                <use href="./images/icons.svg#edit">
+                </svg>
+              <p>Edit</p>
+            </div>
+          </div>
+      </div>
+      
+      <!-- EDIT COMMENT CARD -->
+      <div class="comment__card comment" data-commment-id="2">
+          <div class="card__votes">
+            <svg>
+              <use href="./images/icons.svg#plus"></use>
+            </svg>
+            <p class="votes__score">
+              5
+            </p>
+            <svg>
+              <use href="./images/icons.svg#minus"></use>
+            </svg>
+          </div>
+        <div class="card__user">
+          <img src="./images/avatars/image-amyrobson.webp" alt="">
+          <p class="user__name">
+            amyrozefebson
+          </p>
+          <p class="user__date">
+            1 month ago
+          </p>
+        </div>
+        <div class="card__comment">
+          <div class="comment__edit">
+            <div class="answer__textarea">
+             <form action="" id="form-comment-reply">
+              <textarea name="comment-reply" id="comment-reply" rows="3" placeholder="Edit your answer...">Impressive! Though HEE seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well. deleniti distinctio fugiat eum rem adipisci ipsam odit. Optio cumque voluptatibus fugiat architecto maxime. Enim id et deserunt voluptas illum autem impedit doloribus! Quam facere incidunt excepturi corrupti corporis optio ipsa necessitatibus dignissimos fugiat, asperiores est repellendus, maiores soluta qui.</textarea>
+             </form>
+            </div>
+            <div class="answer__button">
+              <input type="submit" value="REPLY" form="form-comment-reply">
+            </div>
+          </div>
+        </div>
+          <div class="card__reaction">
+            <div class="reaction__btn reaction__btn--reply  reaction__btn--disable">
+              <svg>
+              <use href="./images/icons.svg#reply">
+              </svg>
+              <p>Reply</p>
+            </div>
+            <div class="reaction__btn reaction__btn--delete">
+                <svg>
+                <use href="./images/icons.svg#delete">
+                </svg>
+              <p>Delete</p>
+            </div>
+            <div class="reaction__btn reaction__btn--edit ">
+                <svg>
+                <use href="./images/icons.svg#edit">
+                </svg>
+              <p>Edit</p>
+            </div>
+          </div>
+      </div>
+      
+      <!-- ADD A REPLY CARD -->
+      <div class="comment__card comment answer">
+        <div class="answer__picture">
+          <img src="./images/avatars/image-maxblagun.png" alt="Max Blagun picture">
+        </div>
+        <div class="answer__textarea">
+          <form action="" id="form-comment-reply">
+            <textarea name="comment-reply" id="comment-reply" rows="3" placeholder="Add a reply..."></textarea>
+          </form>
+        </div>
+        <div class="answer__button">
+          <input type="submit" value="REPLY" form="form-comment-reply">
         </div>
       </div>
-      <div class="comment__card comment" data-id="5" data-score="5">
-        COMMENT 3
-      </div>
-      <div class="answer">REPLY</div>
 
-      <!-- <main class="comments">
-      <div class="comment" data-id="1">
-        <div class="comment__card"></div>
+      <!-- COMMENT CARD -->
+      <div class="comment__card comment" data-commment-id="3">
+          <div class="card__votes">
+            <svg>
+              <use href="./images/icons.svg#plus"></use>
+            </svg>
+            <p class="votes__score">
+              5
+            </p>
+            <svg>
+              <use href="./images/icons.svg#minus"></use>
+            </svg>
+          </div>
+        <div class="card__user">
+          <img src="./images/avatars/image-juliusomo.webp" alt="">
+          <p class="user__name">
+            juliusomo <span class="user__you">
+              you
+            </span>
+          </p>
+          <p class="user__date">
+            1 month ago
+          </p>
+        </div>
+        <div class="card__comment">
+          <p>
+            Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
+            deleniti distinctio fugiat eum rem adipisci ipsam odit. Optio cumque
+            voluptatibus fugiat architecto maxime. Enim id et deserunt voluptas
+            illum autem impedit doloribus! Quam facere incidunt excepturi corrupti
+            corporis optio ipsa necessitatibus dignissimos fugiat, asperiores est
+            repellendus, maiores soluta qui.
+          </p>
+        </div>
+          <div class="card__reaction">
+            <div class="reaction__btn reaction__btn--reply">
+              <svg>
+              <use href="./images/icons.svg#reply">
+              </svg>
+              <p>Reply</p>
+            </div>
+            <div class="reaction__btn reaction__btn--delete reaction__btn--disable">
+                <svg>
+                <use href="./images/icons.svg#delete">
+                </svg>
+              <p>Delete</p>
+            </div>
+            <div class="reaction__btn reaction__btn--edit reaction__btn--disable">
+                <svg>
+                <use href="./images/icons.svg#edit">
+                </svg>
+              <p>Edit</p>
+            </div>
+          </div>
       </div>
-      <div class="comment__card" data-id="2">
-        <div class="comment"></div>
-        <div class="responses">
-          <div class="responses__card" data-reply="1"></div>
-          <div class="responses__Card" data-reply="2"></div>
+
+      <!-- REPLIES -->
+      <div class="replies">
+        <!-- REPLY TO COMMENT CARD -->
+        <div class="comment__card reply" data-commment-id="4">
+          <div class="card__votes">
+            <svg>
+              <use href="./images/icons.svg#plus"></use>
+            </svg>
+            <p class="votes__score">
+              5
+            </p>
+            <svg>
+              <use href="./images/icons.svg#minus"></use>
+            </svg>
+          </div>
+          <div class="card__user">
+            <img src="./images/avatars/image-ramsesmiron.webp" alt="">
+            <p class="user__name">
+              ramsesmiron <span class="user__you">
+                you
+              </span>
+            </p>
+            <p class="user__date">
+              1 month ago
+            </p>
+          </div>
+          <div class="card__comment">
+            <p>
+              <span class="reply_user">@juliusomo </span>Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
+              deleniti distinctio fugiat eum rem adipisci ipsam odit. Optio cumque
+              voluptatibus fugiat architecto maxime. Enim id et deserunt voluptas
+              illum autem impedit doloribus! Quam facere incidunt excepturi corrupti
+              corporis optio ipsa necessitatibus dignissimos fugiat, asperiores est
+              repellendus, maiores soluta qui.
+            </p>
+          </div>
+          <div class="card__reaction">
+            <div class="reaction__btn reaction__btn--reply">
+              <svg>
+              <use href="./images/icons.svg#reply">
+              </svg>
+              <p>Reply</p>
+            </div>
+            <div class="reaction__btn reaction__btn--delete reaction__btn--disable">
+                <svg>
+                <use href="./images/icons.svg#delete">
+                </svg>
+              <p>Delete</p>
+            </div>
+            <div class="reaction__btn reaction__btn--edit reaction__btn--disable ">
+                <svg>
+                <use href="./images/icons.svg#edit">
+                </svg>
+              <p>Edit</p>
+            </div>
+          </div>
+        </div>
+
+       <!-- REPLY TO COMMENT CARD -->
+        <div class="comment__card reply" data-commment-id="5">
+          <div class="card__votes">
+            <svg>
+              <use href="./images/icons.svg#plus"></use>
+            </svg>
+            <p class="votes__score">
+              5
+            </p>
+            <svg>
+              <use href="./images/icons.svg#minus"></use>
+            </svg>
+          </div>
+          <div class="card__user">
+            <img src="./images/avatars/image-amyrobson.webp" alt="">
+            <p class="user__name">
+              amyrozefebson <span class="user__you">
+                you
+              </span>
+            </p>
+            <p class="user__date">
+              1 month ago
+            </p>
+          </div>
+          <div class="card__comment">
+          <p>
+            <span class="reply_user">@ramesmiron </span>Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
+            deleniti distinctio fugiat eum rem adipisci ipsam odit. Optio cumque
+            voluptatibus fugiat architecto maxime. Enim id et deserunt voluptas
+            illum autem impedit doloribus! Quam facere incidunt excepturi corrupti
+            corporis optio ipsa necessitatibus dignissimos fugiat, asperiores est
+            repellendus, maiores soluta qui.
+          </p>
+          </div>
+           <div class="card__reaction">
+            <div class="reaction__btn reaction__btn--reply">
+              <svg>
+              <use href="./images/icons.svg#reply">
+              </svg>
+              <p>Reply</p>
+            </div>
+            <div class="reaction__btn reaction__btn--delete reaction__btn--disable">
+                <svg>
+                <use href="./images/icons.svg#delete">
+                </svg>
+              <p>Delete</p>
+            </div>
+            <div class="reaction__btn reaction__btn--edit reaction__btn--disable ">
+                <svg>
+                <use href="./images/icons.svg#edit">
+                </svg>
+              <p>Edit</p>
+            </div>
+          </div>
+        </div>
+         <!-- ADD A REPLY TO COMMENT CARD -->
+      <div class="comment__card reply answer">
+        <div class="answer__picture">
+          <img src="./images/avatars/image-maxblagun.png" alt="Max Blagun picture">
+        </div>
+        <div class="answer__textarea">
+          <form action="" id="form-comment-reply">
+            <textarea name="comment-reply" id="comment-reply" rows="3" placeholder="Add a reply..."></textarea>
+          </form>
+        </div>
+        <div class="answer__button">
+          <input type="submit" value="REPLY" form="form-comment-reply">
         </div>
       </div>
-      <div class="answer"></div> -->
+      </div>
+      
+
+
+
+
     </main>
+
+          <!-- MODALE DELETE COMMENT -->
+      <div class="modale__container modale__container--disable  ">
+        <div class="modale__content"> 
+          <h2>Delete Comment</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem suscipit saepe quam voluptas rerum necessitatibus numquam, distinctio reiciendis fugiat facilis.</p>
+          <div class="modale__buttons">
+            <button class="" id="noDelete">NO, CANCEL</button>
+            <button class="modale__buttons--delete" id="delete">YES, DELETE</button>
+          </div>
+
+        </div>
+      </div>
+
+        <!-- ADD A NEW COMMENT -->
+      <div class="comment__card answer ">
+        <div class="answer__picture">
+          <img src="./images/avatars/image-maxblagun.png" alt="Max Blagun picture">
+        </div>
+        <div class="answer__textarea">
+          <form action="" id="form-comment">
+
+            <textarea name="comment-answer" id="comment-answer" rows="3" placeholder="Add a comment..."></textarea>
+          </form>
+        </div>
+        <div class="answer__button">
+          <input type="submit" value="SEND" form="form-comment">
+        </div>
+      </div>
 
     <footer>
       <a
@@ -103,4 +389,6 @@
       </div>
     </footer>
   </body>
+
+  <!-- <script type="module" src="./app/main.js"></script> -->
 </html>
